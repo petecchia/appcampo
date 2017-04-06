@@ -1,25 +1,23 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 use Yii;
 
 /**
- * This is the model class for table "cooperativa".
+ * This is the model class for table "municipios".
  *
  * @property integer $id
  * @property string $nombre
- * @property string $municipio
- * @property string $contacto
  */
-class Cooperativa extends \yii\db\ActiveRecord
+class Municipios extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'cooperativa';
+        return 'municipios';
     }
 
     /**
@@ -28,8 +26,7 @@ class Cooperativa extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre'], 'required'],
-            [['nombre', 'municipio', 'contacto'], 'string', 'max' => 255],
+            [['nombre'], 'string', 'max' => 100],
         ];
     }
 
@@ -41,8 +38,6 @@ class Cooperativa extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nombre' => 'Nombre',
-            'municipio' => 'Municipio',
-            'contacto' => 'Contacto',
         ];
     }
 }
